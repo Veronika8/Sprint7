@@ -9,8 +9,8 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 
 public class LoginCourierTest extends BaseTest {
 
-    String login = "rwerewfkhkwerjhkjhkjhklkj";
-    String password="1224324789";
+    String login = "rwerewfkhkwehlkj";
+    String password="199324789";
     String firstName="saske";
 
     CourierClient courierClient=new CourierClient();
@@ -32,7 +32,6 @@ public class LoginCourierTest extends BaseTest {
         Response response1 = courierClient.sendPostRequestCourier(courier);
         response1.then().assertThat().statusCode(201)
                 .body("ok",equalTo(true));
-
 
         Courier courier1=new Courier(2,password);
         Response response2 = given()
@@ -56,10 +55,10 @@ public class LoginCourierTest extends BaseTest {
         response1.then().assertThat().statusCode(201)
                 .body("ok",equalTo(true));
 
-        Courier courier=new Courier(1,login);
+        Courier courier1=new Courier(1,login);
         Response response2 = given()
                 .header("Content-type", "application/json")
-                .body(courier)
+                .body(courier1)
                 .when()
                 .post("/api/v1/courier/login");
         response2.then().assertThat().statusCode(504);
