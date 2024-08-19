@@ -1,8 +1,10 @@
+package api.model;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Order {
-    private String firstName ;
+    private String firstName;
     private String lastName;
     private String address;
     private int metroStation;
@@ -10,7 +12,7 @@ public class Order {
     private int rentTime;
     private String deliveryDate;
     private String comment;
-    private List<String> colors ;
+    private List<String> colors;
 
     public Order(int number,String firstName, String lastName, String address, int metroStation, String phone, int rentTime,
                  String deliveryDate, String comment, String colors) {
